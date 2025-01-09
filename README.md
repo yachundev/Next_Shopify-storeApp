@@ -1,6 +1,17 @@
 # 🛍 Next Shopify Storefront
 
-A **[Shopping Cart](https://github.com/maxvien/next-shopify-storefront)** built with [TypeScript](https://www.typescriptlang.org/), [Emotion](https://emotion.sh/), [Next.js](https://nextjs.org/), [React.js](https://reactjs.org/), [React Query](https://react-query.tanstack.com/), [Shopify Storefront GraphQL API](https://shopify.dev/api/storefront), ... and [Material UI](https://material-ui.com/).
+A **[Shopping Cart](https://github.com/Maxvien/next-shopify-storefront)** built with [TypeScript](https://www.typescriptlang.org), [Tailwind CSS](https://tailwindcss.com), [Headless UI](https://headlessui.com), [Next.js](https://nextjs.org), [React.js](https://react.dev), [Shopify Hydrogen React](https://shopify.dev/docs/api/hydrogen-react),... and [Shopify Storefront GraphQL API](https://shopify.dev/docs/api/storefront).
+
+![Next Shopify Storefront - GitHub Repo Stars](https://img.shields.io/github/stars/maxvien/next-shopify-storefront?label=Stars)
+![Next Shopify Storefront - GitHub forks](https://img.shields.io/github/forks/maxvien/next-shopify-storefront?label=Forks)
+![Next Shopify Storefront - Started Years](https://img.shields.io/badge/Since-2019-blue?style=flat)
+
+## Tutorials
+
+- [How Do I Organize a Sustainable Next.js Project?](https://github.com/Maxvien/next-shopify-storefront/issues/68)
+- [How Do I Handle Typesafe Modular Data Fetching in Next.js?](https://github.com/Maxvien/next-shopify-storefront/issues/69)
+- [How Do I Interact Safely with GraphQL API in Next.js?](https://github.com/Maxvien/next-shopify-storefront/issues/70)
+- [How Do I Implement Dynamic Variant Selector for Shopify in Next.js?](https://github.com/Maxvien/next-shopify-storefront/issues/71)
 
 
 
@@ -9,17 +20,16 @@ A **[Shopping Cart](https://github.com/maxvien/next-shopify-storefront)** built 
 These are my experiences when I have been working on this project:
 
 - Designing & Building the [Storefront](https://github.com/maxvien/next-shopify-storefront) from Scratch.
-- Using [Emotion](https://emotion.sh/) to Write Component-scoped Styles.
-- Using [TypeScript](https://www.typescriptlang.org/) to Create Type-safe React Components.
-- Using [React Query](https://react-query.tanstack.com/) to Fetch, Cache and, Update Data.
-- Using [Next.js](https://nextjs.org/) for Static Generation and Server-Side Rendering.
-- Using [Next SEO](https://www.npmjs.com/package/next-seo) to Manage Search Engine Optimization More Easily.
-- Using [Material UI](https://material-ui.com/) to Create a Beautiful User Interface.
-- Using [Swiper](https://swiperjs.com/) to Create Beautiful, Touchable, Responsive Sliders.
+- Creating [Next Utilities](https://www.npmjs.com/package/@maxvien/next) for Type-safe Modular Data Fetching.
+- Creating [Shopify Utilities](https://www.npmjs.com/package/@maxvien/shopify) to Simplify Variant Selecting.
+- Using [GraphQL Zeus](https://github.com/graphql-editor/graphql-zeus) to Interact with Storefront API.
+- Using [Shopify Hydrogen](https://shopify.dev/docs/custom-storefronts/hydrogen-react) to Implement Storefront Features.
+- Using [Tailwind CSS](https://tailwindcss.com/) & [Headless UI](https://headlessui.com/) to Build the Storefront UI.
+- Using [Next.js](https://nextjs.org/) for Incremental Static Regeneration.
+- Using [Next SEO](https://www.npmjs.com/package/next-seo) to Implement Search Engine Optimization.
+- Using [TypeScript](https://www.typescriptlang.org/) to Safely Create React Hooks, and Components.
 - Using [React Use](https://github.com/streamich/react-use) Hooks to Speed Up Component Development.
-- Using [CSS Media Queries](https://www.w3schools.com/css/css_rwd_mediaqueries.asp) to Create a Mobile-First and Responsive Design.
-- Using [GraphQL Request](https://www.npmjs.com/package/graphql-request) to Interact with Shopify Storefront GraphQL API.
-- Using [GraphQL Code Generator](https://www.graphql-code-generator.com/) to Generate TypeScript GraphQL Clients.
+- Using [Swiper](https://swiperjs.com/) to Create Beautiful, Touchable, Responsive Sliders.
 - Using [ESlint](https://eslint.org/), [Prettier](https://prettier.io/) to Follow Next.js Best Practices.
 
 If you like this project, hit the **STAR** button to bookmark it ⭐️
@@ -39,24 +49,25 @@ git clone https://github.com/maxvien/next-shopify-storefront.git
 Install the project's dependencies.
 
 ```bash
-yarn install
+npm install
 ```
 
 ## Usage
 
 First, you need to set the below environment variables in the `.env` file or your deployment platforms.
 
-- `NEXT_PUBLIC_SHOPIFY_STOREFRONT_API_ENDPOINT`
-- `NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN`
+- `NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN`
+- `NEXT_PUBLIC_SHOPIFY_STOREFRONT_API_TOKEN`
+- `NEXT_PUBLIC_SHOPIFY_STOREFRONT_API_VERSION`
 
-You can follow the [Shopify Storefront GraphQL API](https://shopify.dev/api/storefront/getting-started) documentation to get Storefront's `API Endpoint` and `Access Token`.
+You can follow the [Shopify Storefront GraphQL API](https://shopify.dev/api/storefront/getting-started) documentation to get Storefront API information.
 
 ### Develop
 
 Develop the project in development mode.
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 ### Build
@@ -64,7 +75,7 @@ yarn dev
 Build the project in production mode.
 
 ```bash
-yarn build
+npm run build
 ```
 
 ### Start
@@ -72,7 +83,7 @@ yarn build
 Start the project in production mode.
 
 ```bash
-yarn start
+npm run start
 ```
 
 ### Lint
@@ -80,13 +91,13 @@ yarn start
 Analyze the code to find problems with `eslint` and `prettier`.
 
 ```bash
-yarn lint
+npm run lint
 ```
 
 Automatically fix problems.
 
 ```bash
-yarn fix
+npm run fix
 ```
 
 ## Visual Studio Code Extensions
@@ -95,12 +106,17 @@ To speed up your productivity, you can install these extensions:
 
 - [Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [Apollo GraphQL](https://marketplace.visualstudio.com/items?itemName=apollographql.vscode-apollo)
-- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 - [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+- [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss)
 
 ## Related Projects
 
 - **[Shopify Data Faker](https://github.com/Maxvien/shopify-data-faker)** • A Shopify development tool for generating dummy store data.
 - **[Bootstrap Shopify Theme](https://github.com/Maxvien/bootstrap-shopify-theme/tree/v1)** • A free Shopify Theme built with Bootstrap, BEM, Liquid, Sass, ESNext, Theme Tools, ... and Webpack.
+
 - **[Next Shopify Storefront (v1)](https://github.com/Maxvien/next-shopify-storefront/tree/v1)** • A Shopping Cart built with TypeScript, NextJS, React, Redux, Apollo Client, Shopify Storefront GraphQL API, ... and Material UI.
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=VienDinhCom/next-shopify-storefront&type=Date)](https://star-history.com/#Maxvien/next-shopify-storefront&Date)

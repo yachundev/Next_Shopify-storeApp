@@ -1,42 +1,23 @@
-import last from 'lodash/last';
-import { NextSeo } from 'next-seo';
-import { InfiniteData, useInfiniteQuery } from 'react-query';
-import { ProductList } from '@app/components/sections/product-list';
-import { DefaultLayout } from '@app/components/layouts/default-layout/default-layout';
+import { PageProps, NextSeo, fetchServerSideProps } from '@site/utilities/deps';
+import { StoreLayout } from '@site/layouts/StoreLayout';
+import { ProductListSection, fetchProductListSection } from '@site/sections/ProductListSection';
 
-import { PRODUCT_LIST_QUERY } from '@app/constants/query.constant';
-import { ProductService } from '@app/services/product.service';
-
-interface Props {
-  initialData: InfiniteData<ProductService.List>;
-}
-
-Page.getInitialProps = async (): Promise<Props> => {
-  const firstPage = await ProductService.getList();
-
+export const getStaticProps = fetchServerSideProps(async () => {
   return {
-    initialData: { pages: [firstPage], pageParams: [null] },
-  };
-};
-
-export default function Page({ initialData }: Props) {
-  const productList = useInfiniteQuery(
-    PRODUCT_LIST_QUERY,
-    ({ pageParam }) => ProductService.getList({ after: pageParam }),
-    {
-      initialData,
-      getNextPageParam: (lastPage) => {
-        if (lastPage.pageInfo.hasNextPage) {
-          return last(lastPage.products)?.cursor;
-        }
+    props: {
+      data: {
+        productListSection: await fetchProductListSection(),
       },
-    }
-  );
+    },
+    revalidate: 60,
+  };
+});
 
+export default function Page(props: PageProps<typeof getStaticProps>) {
   return (
-    <DefaultLayout>
+    <StoreLayout>
       <NextSeo title="Products" description="All Products from Next Shopify Storefront" />
-      <ProductList products={productList.data?.pages.flatMap(({ products }) => products)!} pagination={productList} />
-    </DefaultLayout>
+      <ProductListSection data={props.data.productListSection} />
+    </StoreLayout>
   );
 }
