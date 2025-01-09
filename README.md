@@ -78,45 +78,4 @@ Build the project in production mode.
 npm run build
 ```
 
-### Start
 
-Start the project in production mode.
-
-```bash
-npm run start
-```
-
-### Lint
-
-Analyze the code to find problems with `eslint` and `prettier`.
-
-```bash
-npm run lint
-```
-
-Automatically fix problems.
-
-```bash
-npm run fix
-```
-
-## Visual Studio Code Extensions
-
-To speed up your productivity, you can install these extensions:
-
-- [Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
-- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
-- [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss)
-
-## Related Projects
-
-- **[Shopify Data Faker](https://github.com/Maxvien/shopify-data-faker)** • A Shopify development tool for generating dummy store data.
-- **[Bootstrap Shopify Theme](https://github.com/Maxvien/bootstrap-shopify-theme/tree/v1)** • A free Shopify Theme built with Bootstrap, BEM, Liquid, Sass, ESNext, Theme Tools, ... and Webpack.
-
-- **[Next Shopify Storefront (v1)](https://github.com/Maxvien/next-shopify-storefront/tree/v1)** • A Shopping Cart built with TypeScript, NextJS, React, Redux, Apollo Client, Shopify Storefront GraphQL API, ... and Material UI.
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=VienDinhCom/next-shopify-storefront&type=Date)](https://star-history.com/#Maxvien/next-shopify-storefront&Date)
