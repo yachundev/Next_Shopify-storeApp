@@ -1,19 +1,14 @@
-const dev = process.env.NODE_ENV !== 'production';
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.shopify.com',
+      },
+    ],
+  },
+};
 
-let config = {};
-
-if (dev) {
-  const withTypescript = require("@zeit/next-typescript")
-  const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-
-  config = withTypescript({
-    webpack(config, options) {
-      // Do not run type checking twice:
-      if (options.isServer) config.plugins.push(new ForkTsCheckerWebpackPlugin())
-
-      return config
-    }
-  });
-}
-
-module.exports = config;
+module.exports = nextConfig;
